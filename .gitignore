@@ -1,0 +1,6 @@
+*pdf
+*js
+/js
+/__pycache__
+hello.py 
+bibliotecas.py
