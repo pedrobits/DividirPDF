@@ -1,14 +1,24 @@
 from asyncio import sleep
+import tkinter
+from unicodedata import name
 from PyPDF2 import PdfFileWriter, PdfFileReader
-import sys
-import msvcrt
+import sys, msvcrt, tkinter, os
+from tkinter import filedialog
 from time import sleep
 
-# PDF
-arquivo = "arquivo.pdf"
+def pegarArquivo():
+    arquivo = filedialog.askopenfile(name)
+    nome_arquivo = str(os.path.basename(arquivo))
+    return nome_arquivo
+
+tkinter.Tk().withdraw()
+
+arquivo = pegarArquivo()
+
+# # PDF
+# arquivo = "arquivo.pdf"
 
 # Criando uma função com a biblioteca msvcrt para "press any key for continue"
-
 def wait():
     msvcrt.getch()
 
