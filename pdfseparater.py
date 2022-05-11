@@ -24,10 +24,15 @@ def separar():
         output.addPage(inputpdf.getPage(i))
         with open("pagina%s.pdf" % i, "wb") as outputStream:
             output.write(outputStream)
+    print("OK")
 
 # Var guardando a quantidade de paginas
 numero_de_paginas = inputpdf.numPages
 
 # Input com a decisão de NÃO ou SIM para dividir o PDF
-pergunta1 = input("O numero de paginas a serem divididas é de {}. Deseja continuar? (Sim ou Não): ".format(numero_de_paginas))
+pergunta1 = input("O numero de paginas a serem divididas é de {}. Deseja continuar? (Y): ".format(numero_de_paginas))
 resposta = pergunta1.upper()
+
+if resposta == "Y" or resposta == "YES" or resposta == "SIM":
+    print("Separando...")
+    separar()
